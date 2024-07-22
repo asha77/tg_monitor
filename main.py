@@ -620,10 +620,10 @@ def collect_commands(device, commands):
             sendlog(cnf_save_path, ['host'] + ' Error: ' + str(error))
             bot.send_message('-4201066530', refregexp(device['host'] + " 💩 Error sending commands"), parse_mode='MarkdownV2')
         except ssh2.exceptions.SocketRecvError as error:
-            sendlog(cnf_save_path, ['host'] + ' Error: ' + str(error))
+            sendlog(cnf_save_path, device['host'] + ' Error: ' + str(error))
             bot.send_message('-4201066530', refregexp(device['host'] + " 💩 Error sending commands"), parse_mode='MarkdownV2')
         except ScrapliConnectionNotOpened as error:
-            sendlog(cnf_save_path, "IP: " + device['host'] + " Connection Error " + str(
+            sendlog(cnf_save_path, "IP: " + device['host'] + " Connection Error: " + str(
                 error) + " - please, check device exist or online.")
             bot.send_message('-4201066530', refregexp("IP: " + device['host'] + " 💀 Connection Error"),
                              parse_mode='MarkdownV2')
