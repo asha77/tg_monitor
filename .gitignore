@@ -1,0 +1,11 @@
+/.env
+output
+**/output
+**/venv
+/logfile.log
+/scrapli.log
+/devices.txt
+/commands.txt
+/.env
+/edgecore_check_commands.txt
+/devices_nsk.txt
